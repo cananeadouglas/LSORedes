@@ -1,0 +1,6 @@
+#ConfiguraRede
+ifconfig eth0 10.0.41.4 netmask 255.255.255.0 up
+route add default gw 10.0.41.1
+
+#Habilita serviço SSH
+/usr/sbin/sshd

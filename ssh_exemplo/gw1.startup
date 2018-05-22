@@ -1,0 +1,8 @@
+#Configura Rede
+ifconfig eth1 10.0.41.1 netmask 255.255.255.0 up
+
+#LiberaConexao
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+#Habilita SSH
+/usr/sbin/sshd
