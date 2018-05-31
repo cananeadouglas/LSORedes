@@ -8,7 +8,9 @@ ifconfig eth0 10.0.3.1/24
 #route add -net 10.0.1.0/24 gw 10.0.2.1
 
 #configuração NAT
-iptables -t nat -A POSTROUTING -j MASQUERADE
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+
+#encaminhamento de pacotes IP - ligando o roteamento
 sysctl -w net.ipv4.ip_forward=1
 
 #configuração DHCP
